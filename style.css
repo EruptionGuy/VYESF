@@ -12,7 +12,7 @@
     --color-heading: #2f3850;
     --color-heading2: #1e2b40;
     --color-heading-light: #f0f0f0;
-    --color-text: #3c5a6a;
+    --color-text: #0b1014;
     --margin: 7%;
     --margin-header: 5%;
 }
@@ -318,7 +318,7 @@ table tr td:first-child {
 }
 
 table tr th {
-    background: linear-gradient(180deg, var(--color-primary), var(--color-accent));
+    background: linear-gradient(to bottom, var(--color-accent-orange), #ff5d22);
     font-size: 2rem;
     border-top: solid 0.2rem var(--color-text);
     color: white;
