@@ -57,7 +57,7 @@ header {
     background-size: 35px 35px;
     background-attachment: fixed; */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    background: linear-gradient(to bottom, #ff5d22, var(--color-accent-orange));
+    background: linear-gradient(to bottom, var(--color-accent-green), #70c383);
 
 }
 
@@ -88,23 +88,24 @@ header > div > div {
 
 h1 {
     font-family: "Rubik", sans-serif;
-    font-size: 12rem;
+    font-size: 5rem;
     font-weight: 400;
-    color: var(--color-heading-light);
+    color: #f0f0f0f3;
     line-height: 1;
 }
 
 div h1:nth-child(1) {
-    font-size: 8rem;
+    font-size: 12rem;
     font-weight: 800;
-    color: var(--color-heading2);
+    color: var(--color-heading-light);
 }
 
 header img {
     margin-right: var(--margin-header);
-    width: 50%;
+    width: 40%;
     height: auto;
     object-fit: contain;
+    filter: opacity(50%)
 }
 
 main {
@@ -118,6 +119,7 @@ h2 {
     color: var(--color-heading);
     font-weight: 600;
     margin-bottom: 2rem;
+    text-align: center;
 }
 
 h3 {
@@ -144,65 +146,123 @@ main > div {
 }
 
 #about h2 {
-    width: 80%;
+    width: 40%; 
+    text-align: left;
 }
 
-#activities > div {
+#about p {
+    width: 60%;
+}
+
+#demographic > div {
     display: flex;
+    flex-direction: column;
     text-align: center;
-    gap: 5%;
+    row-gap: 1rem;
     justify-content: center;
 }
 
-#activities > div > div {
+#demographic > div > div {
     background: linear-gradient(145deg, #5e9b57, #70c383);
     padding: 2rem;
     border-radius: 2rem;
-    width: 50%;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 2%;
+    align-items: center;
 }
 
-#activities h2, #eligibility h2, #registration h2, #registernow {
-    text-align: center;
+#demographic i {
+    font-size: 4rem;
 }
 
-#activities h3, #activities p, #activities i {
+#demographic p, #demographic i {
     color: white;
 }
 
-#activities i {
-    font-size: 4rem;
+#theme > div {
+    display: flex;
+    gap: 10%;
+    background: linear-gradient(135deg, #3a8ef6, #6f42c1);
+    padding: 4rem;
+    border-radius: 3rem;
+}
+
+#theme img {
+    width: 40%;
+    border-radius: 2rem;
+}
+
+#theme h3 {
+    font-size: 3rem;
+    font-family: "Rubik", sans-serif;
+    color: var(--color-bg-main);
+    font-weight: 600;
     margin-bottom: 2rem;
 }
 
-#eligibility {
-    background: linear-gradient(to right, #e7f6ff, #f0f9ff);
+#theme p {
+    color: #f0f0f0f3;
+}
+
+#topics {
+    /* background: linear-gradient(to right, #e7f6ff, #f0f9ff); */
+    background: linear-gradient(135deg, #e3e3ff, #f0f9ff);
     border-radius: 3rem;
     padding: 4rem;
 }
 
-#eligibility > div {
+#topics > div {
     display: flex;
     text-align: center;
     justify-content: center;
     gap: 5%;
 }
 
-#eligibility > div > div {
+#topics > div > div {
     width: 30%;
-    background: linear-gradient(145deg, #4977d2, #4dabf7);
+    /* background: linear-gradient(145deg, #4977d2, #4dabf7); */
+    background: linear-gradient(135deg, #3a8ef6, #6f42c1);
     padding: 2rem;
     border-radius: 2rem;
     color: white;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
-#eligibility i {
+#topics i {
     font-size: 4rem;
     margin-bottom: 2rem;
 }
 
-#eligibility p {
+#topics p {
+    color: white;
+}
+
+#awards > div {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 5%;
+}
+
+#awards > div > div {
+    background: linear-gradient(to bottom, #ff5d22, var(--color-accent-orange));
+    padding: 2rem;
+    border-radius: 2rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    width: 20%;
+}
+
+#awards h3 {
+    font-size: 4rem;
+    color: white;
+}
+
+#awards p {
+    color: #f0f0f0f3;
+}
+
+#demographic p {
     color: white;
 }
 
@@ -380,18 +440,18 @@ footer a {
         text-align: center;
     }
 
-    #activities > div,
-    #eligibility > div {
+    #demographic > div,
+    #topics > div {
         flex-direction: column;
         gap: 2rem;
     }
 
-    #activities > div > div,
-    #eligibility > div > div {
+    #demographic > div > div,
+    #topics > div > div {
         width: 91%;
     }
 
-    #eligibility {
+    #topics {
         background: none;
         padding: 0;
         border-radius: 0;
@@ -460,8 +520,8 @@ footer a {
         padding: 1rem 2rem;
     }
 
-    #activities > div > div,
-    #eligibility > div > div {
+    #demographic > div > div,
+    #topics > div > div {
         width: fit-content;
     }
 
