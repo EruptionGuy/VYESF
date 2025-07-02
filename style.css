@@ -3,12 +3,15 @@
 
 :root {
     --color-bg-main: #ffffff;
+    --color-primary: #3a8ef6;
+    --color-accent: #6f42c1;
     --color-accent-orange: #ff934f;
     --color-accent-blue: #4977d2;
     --color-accent-green: #5e9b57;
-    --color-heading: #2f4858;
-    --color-heading2: #17494d;
-    --color-heading-light:  #f0f0f0;
+    --color-subtle-bg: #f5f6fa;
+    --color-heading: #2f3850;
+    --color-heading2: #1e2b40;
+    --color-heading-light: #f0f0f0;
     --color-text: #3c5a6a;
     --margin: 7%;
     --margin-header: 5%;
@@ -54,12 +57,8 @@ header {
     margin: 0 2% 5rem 2%;
     border-bottom-left-radius: 5rem;
     border-bottom-right-radius: 5rem;
-    /* background-image: radial-gradient(var(--color-heading-light) 1px, transparent 0);
-    background-size: 35px 35px;
-    background-attachment: fixed; */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    background: linear-gradient(to bottom, var(--color-accent-green), #70c383);
-
+    background: linear-gradient(to bottom, var(--color-primary), var(--color-accent));
 }
 
 nav {
@@ -91,14 +90,14 @@ h1 {
     font-family: "Rubik", sans-serif;
     font-size: 5rem;
     font-weight: 400;
-    color: #f0f0f0f3;
+    color: var(--color-heading-light);
     line-height: 1;
 }
 
 div h1:nth-child(1) {
     font-size: 12rem;
     font-weight: 800;
-    color: var(--color-heading-light);
+    color: var(--color-subtle-bg);
 }
 
 header img {
@@ -106,7 +105,7 @@ header img {
     width: 40%;
     height: auto;
     object-fit: contain;
-    filter: opacity(50%)
+    filter: opacity(90%) invert();
 }
 
 main {
@@ -141,7 +140,7 @@ main > div {
 #about {
     display: flex;
     gap: 10%;
-    background: linear-gradient(to right, #ffe9b8, #fffdf0);
+    background: linear-gradient(to right, #e6f0ff, #f0f5ff);
     padding: 4rem;
     border-radius: 3rem;
 }
@@ -164,7 +163,7 @@ main > div {
 }
 
 #demographic > div > div {
-    background: linear-gradient(145deg, #5e9b57, #70c383);
+    background: linear-gradient(145deg, var(--color-primary), var(--color-accent));
     padding: 2rem;
     border-radius: 2rem;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
@@ -185,7 +184,7 @@ main > div {
 #theme > div {
     display: flex;
     gap: 10%;
-    background: linear-gradient(135deg, #3a8ef6, #6f42c1);
+    background: linear-gradient(145deg, var(--color-primary), var(--color-accent));
     padding: 4rem;
     border-radius: 3rem;
 }
@@ -198,7 +197,7 @@ main > div {
 #theme h3 {
     font-size: 3rem;
     font-family: "Rubik", sans-serif;
-    color: var(--color-bg-main);
+    color: var(--color-subtle-bg);
     font-weight: 600;
     margin-bottom: 2rem;
 }
@@ -217,7 +216,7 @@ main > div {
 #topics > div > div {
     width: 30%;
     /* background: linear-gradient(145deg, #4977d2, #4dabf7); */
-    background: linear-gradient(135deg, #3a8ef6, #6f42c1);
+    background: linear-gradient(145deg, var(--color-primary), var(--color-accent));
     padding: 2rem;
     border-radius: 2rem;
     color: white;
@@ -244,7 +243,7 @@ main > div {
 }
 
 .awards > div {
-    background: linear-gradient(to bottom, #ff5d22, var(--color-accent-orange));
+    background: linear-gradient(145deg, var(--color-accent-orange), #ff5d22);
     padding: 2rem;
     border-radius: 2rem;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
@@ -275,7 +274,7 @@ main > div {
 }
 
 .vnfinance > div {
-    background: linear-gradient(135deg, #3a8ef6, #6f42c1);
+    background: linear-gradient(145deg, var(--color-primary), var(--color-accent));
     padding: 2rem;
     border-radius: 2rem;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
@@ -319,7 +318,7 @@ table tr td:first-child {
 }
 
 table tr th {
-    background: linear-gradient(to bottom, #ff5d22, var(--color-accent-orange));
+    background: linear-gradient(180deg, var(--color-primary), var(--color-accent));
     font-size: 2rem;
     border-top: solid 0.2rem var(--color-text);
     color: white;
@@ -341,13 +340,15 @@ table tr:last-child td:last-child {
 
 #registernow {
     text-align: center;
-    background: linear-gradient(to right, #ffe3c4, #fffbe9);
+    background: linear-gradient(to right, #e6f0ff, #f0f5ff);
+
     padding: 5rem 2rem;
     border-radius: 3rem;
 }
 
 #registernow a {
-    background: linear-gradient(to bottom, #5e9b57, #70c383);
+    background: linear-gradient(145deg, var(--color-accent-orange), #ff5d22);
+    /* background: linear-gradient(to bottom, #5e9b57, #70c383); */
     color: white;
     text-decoration: none;
     padding: 2rem 3rem;
@@ -360,14 +361,14 @@ table tr:last-child td:last-child {
 }
 
 #registernow a:hover {
-    background: linear-gradient(to bottom, #ff5d22, var(--color-accent-orange));
+    background: linear-gradient(145deg, #70c383, var(--color-accent-green));
 }
 
 footer {
     background: var(--color-accent-orange);
     border-top-left-radius: 5rem;
     border-top-right-radius: 5rem;
-    background: linear-gradient(to bottom, var(--color-accent-orange), #ff5d22);
+    background: linear-gradient(to bottom, var(--color-accent), var(--color-primary));
     margin: 10rem 2% 0 2%;
     padding: 2rem;
 }
@@ -386,8 +387,9 @@ footer > div > div:nth-child(1) {
 }
 
 footer h1 {
-    font-size: 2rem !important;
+    font-size: 2.5rem !important;
     color: var(--color-bg-main) !important;
+    font-weight: 600 !important;
 }
 
 footer p {
