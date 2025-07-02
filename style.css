@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 :root {
-    --color-bg-main: #fffbe9;
+    --color-bg-main: #ffffff;
     --color-accent-orange: #ff934f;
     --color-accent-blue: #4977d2;
     --color-accent-green: #5e9b57;
@@ -19,6 +19,7 @@
     padding: 0;
     font-family: "Lato", sans-serif;
     line-height: 1.6;
+    box-sizing: border-box;
 }
 
 .reveal{
@@ -40,7 +41,7 @@ html {
 
 body {
     background-color: var(--color-bg-main);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     background-image: radial-gradient(#cfcfcf 1px, transparent 0);
     background-size: 35px 35px;
     background-attachment: fixed;
@@ -170,6 +171,7 @@ main > div {
     display: flex;
     gap: 2%;
     align-items: center;
+    width: 100%;
 }
 
 #demographic i {
@@ -189,7 +191,7 @@ main > div {
 }
 
 #theme img {
-    width: 40%;
+    min-width: 40%;
     border-radius: 2rem;
 }
 
@@ -203,13 +205,6 @@ main > div {
 
 #theme p {
     color: #f0f0f0f3;
-}
-
-#topics {
-    /* background: linear-gradient(to right, #e7f6ff, #f0f9ff); */
-    background: linear-gradient(135deg, #e3e3ff, #f0f9ff);
-    border-radius: 3rem;
-    padding: 4rem;
 }
 
 #topics > div {
@@ -238,14 +233,17 @@ main > div {
     color: white;
 }
 
-#awards > div {
+.awards {
     display: flex;
     text-align: center;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 5%;
+    row-gap: 2rem;
+    margin-bottom: 4rem;
 }
 
-#awards > div > div {
+.awards > div {
     background: linear-gradient(to bottom, #ff5d22, var(--color-accent-orange));
     padding: 2rem;
     border-radius: 2rem;
@@ -262,7 +260,35 @@ main > div {
     color: #f0f0f0f3;
 }
 
-#demographic p {
+#awards > p {
+    text-align: center;
+    color: var(--color-text);
+}
+
+.vnfinance {
+    display: flex;
+    text-align: center;
+    gap: 2rem;
+    justify-content: center;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.vnfinance > div {
+    background: linear-gradient(135deg, #3a8ef6, #6f42c1);
+    padding: 2rem;
+    border-radius: 2rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    width: 42%;
+}
+
+.vnfinance i {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+}
+
+.vnfinance p, .vnfinance i {
     color: white;
 }
 
@@ -275,7 +301,7 @@ table {
     border-spacing: 0;
     width: 100%;
     text-align: center;
-    background: #fff9e6;
+    background: var(--color-bg-main);
     border-radius: 2rem;
     overflow: hidden;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
@@ -350,6 +376,7 @@ footer > div {
     margin-left: 5%;
     margin-right: 5%;
     display: flex;
+    row-gap: 2rem !important;
     gap: 5%;
     align-items: center;
 }
@@ -358,14 +385,9 @@ footer > div > div:nth-child(1) {
     width: 40%;
 }
 
-footer h2 {
-    margin-bottom: 0;
-    color: var(--color-heading2);
-}
-
-footer h3 {
-    font-size: 2rem;
-    color: var(--color-heading-light)
+footer h1 {
+    font-size: 2rem !important;
+    color: var(--color-bg-main) !important;
 }
 
 footer p {
@@ -387,11 +409,11 @@ footer a {
         --margin-header: 0%;
     }
     h1 {
-        font-size: 8rem;
+        font-size: 2rem;
     }
 
     div h1:nth-child(1) {
-        font-size: 6rem;
+        font-size: 10rem;
     }
 
     h2 {
@@ -427,7 +449,8 @@ footer a {
     }
 
     header img {
-        width: 70%;
+        width: 60%;
+        margin-top: 2rem;
     }
 
     #about {
@@ -440,21 +463,43 @@ footer a {
         text-align: center;
     }
 
+    #about p {
+        width: 100%;
+        text-align: center;
+    }
+
     #demographic > div,
     #topics > div {
         flex-direction: column;
         gap: 2rem;
     }
 
-    #demographic > div > div,
-    #topics > div > div {
-        width: 91%;
+    #theme > div {
+        flex-direction: column;
+        row-gap: 2rem;
+    }
+
+    #theme img, #theme > div > div {
+        width: 100%;
+        text-align: center;
     }
 
     #topics {
         background: none;
         padding: 0;
         border-radius: 0;
+    }
+
+    #topics > div > div {
+        width: 100%;
+    }
+
+    .awards > div {
+        width: 40%;
+    }
+
+    .vnfinance > div {
+        width: 100%;
     }
 
     table tr th,
@@ -492,11 +537,11 @@ footer a {
         width: 100%;
     }
     h1 {
-        font-size: 5rem;
+        font-size: 1.5rem;
     }
 
     div h1:nth-child(1) {
-        font-size: 4rem;
+        font-size: 5rem;
     }
 
     h2 {
@@ -515,15 +560,15 @@ footer a {
         font-size: 1.4rem;
     }
 
+    .awards > div {
+        width: 100%;
+    }
+
     #registernow a {
         font-size: 1.4rem;
         padding: 1rem 2rem;
     }
 
-    #demographic > div > div,
-    #topics > div > div {
-        width: fit-content;
-    }
 
     table tr th,
     table tr td {
