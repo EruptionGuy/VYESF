@@ -368,7 +368,7 @@ footer {
     background: var(--color-accent-orange);
     border-top-left-radius: 5rem;
     border-top-right-radius: 5rem;
-    background: linear-gradient(to bottom, var(--color-accent), var(--color-primary));
+    background: linear-gradient(to bottom, var(--color-primary), var(--color-accent));
     margin: 10rem 2% 0 2%;
     padding: 2rem;
 }
@@ -380,6 +380,7 @@ footer > div {
     row-gap: 2rem !important;
     gap: 5%;
     align-items: center;
+    margin: 4rem var(--margin-header);
 }
 
 footer > div > div:nth-child(1) {
