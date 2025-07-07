@@ -1,26 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 :root {
-    --color-bg-main: #ffffff;
-    --color-primary: #3a8ef6;
-    --color-accent: #6f42c1;
-    --color-accent-orange: #ff934f;
-    --color-accent-blue: #4977d2;
-    --color-accent-green: #5e9b57;
-    --color-subtle-bg: #f5f6fa;
-    --color-heading: #2f3850;
-    --color-heading2: #1e2b40;
-    --color-heading-light: #f0f0f0;
-    --color-text: #0b1014;
+    --bg-main: #ffffff;
+    --bg-secondary: #f4faef;           /* Soft green-tinted background */
+    --heading-light: #f0f0f0;
+    --heading: #2e2e2e;                /* Dark gray for titles */
+    --text: #0b1014;                   /* Almost black for body */
+    --text-white: #ffffff;
+    --accent-green-dark: #2f663e;      /* For buttons or icons */
+    --accent-green: #538d22;
+    --accent-green-light: #aad576;
+    --vn-finance: #8c3413;
     --margin: 7%;
-    --margin-header: 5%;
 }
 
 * {
     margin: 0;
     padding: 0;
-    font-family: "Lato", sans-serif;
+    font-family:  "Playfair Display", serif;
     line-height: 1.6;
     box-sizing: border-box;
 }
@@ -45,78 +42,86 @@ html {
 body {
     background-color: var(--color-bg-main);
     font-size: 1.3rem;
-    background-image: radial-gradient(#cfcfcf 1px, transparent 0);
+    /* background-image: radial-gradient(#cfcfcf 1px, transparent 0);
     background-size: 35px 35px;
-    background-attachment: fixed;
-}
-
-header {
-    background: var(--color-accent-orange);
-    padding: 2rem;
-    height: 50rem;
-    margin: 0 2% 5rem 2%;
-    border-bottom-left-radius: 5rem;
-    border-bottom-right-radius: 5rem;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    background: linear-gradient(to bottom, var(--color-primary), var(--color-accent));
+    background-attachment: fixed; */
 }
 
 nav {
+    background-color: #1e2b40;
+    position: sticky;
+    top: 0;
+    padding: 1rem;
+    z-index: 1000;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+nav > div {
     display: flex;
     gap: 5%;
-    margin-left: var(--margin-header);
-    margin-right: var(--margin-header);
-    margin-bottom: 5rem;
+    margin-left: var(--margin);
+    margin-right: var(--margin);
 }
 
 nav a {
     text-decoration: none;
-    color: var(--color-heading-light)
+    color: var(--heading-light)
+}
+
+nav a:hover, footer a:hover {
+    color: var(--text-white);
+    transition: 0.5s ease-in-out;
+}
+
+header {
+    padding: 2rem;
+    height: 55rem;
+    margin-bottom: 5rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    background: url(images/hero-image.jpg), #00000039;
+    background-size: cover;
+    background-blend-mode: darken;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 header > div {
+    margin: 0 var(--margin);
     display: flex;
-}
-
-header > div > div {
-    margin-left: var(--margin-header);
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 50%;
+    align-items: center;
+    height: 100%;
+    text-align: center;
 }
 
 h1 {
-    font-family: "Rubik", sans-serif;
-    font-size: 5rem;
+    font-size: 2rem;
     font-weight: 400;
-    color: var(--color-heading-light);
+    color: var(--heading-light);
     line-height: 1;
 }
 
-div h1:nth-child(1) {
-    font-size: 12rem;
+.title {
+    font-size: 10rem;
     font-weight: 800;
-    color: var(--color-subtle-bg);
 }
 
-header img {
-    margin-right: var(--margin-header);
-    width: 40%;
-    height: auto;
-    object-fit: contain;
-    filter: opacity(90%) invert();
+header p {
+    margin-top: 5rem;
+    color: var(--heading-light)
 }
 
-main {
-    margin: 0 var(--margin);
-    padding: 2rem;
+.dash {
+    margin-top: 5rem;
+    width: 12rem;
+    height: 0.6rem;
+    background-color: #ff9d00;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 h2 {
     font-size: 4rem;
-    font-family: "Rubik", sans-serif;
-    color: var(--color-heading);
+    color: var(--heading);
     font-weight: 600;
     margin-bottom: 2rem;
     text-align: center;
@@ -128,33 +133,47 @@ h3 {
     margin-bottom: 1rem;
 }
 
+
 main p {
     color: var(--color-text);
+    margin-bottom: 0.5rem;
 }
 
-main > div {
+section {
+    padding: 2rem;
+}
+
+section > div {
+    margin: 0 var(--margin);
     padding-top: 10rem;
     padding-bottom: 10rem;
 }
 
-#about {
+.about {
     display: flex;
-    gap: 10%;
-    background: linear-gradient(to right, #e6f0ff, #f0f5ff);
-    padding: 4rem;
-    border-radius: 3rem;
 }
 
 #about h2 {
-    width: 40%; 
     text-align: left;
 }
 
-#about p {
+.about > div:nth-child(1) {
+    width: 40%;
+}
+
+.about img {
+    width: 80%;
+}
+
+.about > div:nth-child(2) {
     width: 60%;
 }
 
-#demographic > div {
+#demographic, #topics {
+    background-color: var(--bg-secondary);
+}
+
+.demographic {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -162,11 +181,10 @@ main > div {
     justify-content: center;
 }
 
-#demographic > div > div {
-    background: linear-gradient(145deg, var(--color-primary), var(--color-accent));
-    padding: 2rem;
-    border-radius: 2rem;
+.demographic > div {
+    background-color: var(--accent-green-dark);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
     display: flex;
     gap: 2%;
     align-items: center;
@@ -178,25 +196,30 @@ main > div {
 }
 
 #demographic p, #demographic i {
-    color: white;
+    color: var(--text-white);
 }
 
-#theme > div {
+#theme {
+    background: url(images/the-new-era.jpg), #000000a5;
+    background-size: cover;
+    background-blend-mode: darken;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+#theme * {
+    color: var(--heading-light);
+    text-align: center;
+}
+
+.theme {
     display: flex;
     gap: 10%;
-    background: linear-gradient(145deg, var(--color-primary), var(--color-accent));
-    padding: 4rem;
     border-radius: 3rem;
-}
-
-#theme img {
-    min-width: 40%;
-    border-radius: 2rem;
 }
 
 #theme h3 {
     font-size: 3rem;
-    font-family: "Rubik", sans-serif;
     color: var(--color-subtle-bg);
     font-weight: 600;
     margin-bottom: 2rem;
@@ -206,21 +229,18 @@ main > div {
     color: #f0f0f0f3;
 }
 
-#topics > div {
+.topics {
     display: flex;
     text-align: center;
     justify-content: center;
     gap: 5%;
 }
 
-#topics > div > div {
+.topics > div {
     width: 30%;
-    /* background: linear-gradient(145deg, #4977d2, #4dabf7); */
-    background: linear-gradient(145deg, var(--color-primary), var(--color-accent));
     padding: 2rem;
-    border-radius: 2rem;
-    color: white;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    background-color: var(--accent-green-dark);
+    color: var(--text-white);
 }
 
 #topics i {
@@ -229,12 +249,15 @@ main > div {
 }
 
 #topics p {
-    color: white;
+    color: var(--text-white);
+}
+
+#awards {
+    text-align: center;
 }
 
 .awards {
     display: flex;
-    text-align: center;
     justify-content: center;
     flex-wrap: wrap;
     gap: 5%;
@@ -243,25 +266,18 @@ main > div {
 }
 
 .awards > div {
-    background: linear-gradient(145deg, var(--color-accent-orange), #ff5d22);
+    background-color: var(--accent-green);
     padding: 2rem;
-    border-radius: 2rem;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     width: 20%;
 }
 
 #awards h3 {
     font-size: 4rem;
-    color: white;
+    color: var(--heading-light);
 }
 
-#awards p {
-    color: #f0f0f0f3;
-}
-
-#awards > p {
-    text-align: center;
-    color: var(--color-text);
+.awards p {
+    color: var(--text-white);
 }
 
 .vnfinance {
@@ -274,10 +290,8 @@ main > div {
 }
 
 .vnfinance > div {
-    background: linear-gradient(145deg, var(--color-primary), var(--color-accent));
+    background: var(--accent-green-dark);
     padding: 2rem;
-    border-radius: 2rem;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     align-items: center;
     width: 42%;
 }
@@ -291,86 +305,58 @@ main > div {
     color: white;
 }
 
+#awards img {
+    max-width: 25rem;
+    margin: 2rem 0;
+}
+
+#registration {
+    background-color: var(--bg-secondary);
+    text-align: center;
+}
+
 .table-wrapper {
     overflow-x: auto;
 }
 
 table {
-    border-collapse: separate;
-    border-spacing: 0;
+    border-collapse: collapse;
     width: 100%;
-    text-align: center;
-    background: var(--color-bg-main);
-    border-radius: 2rem;
-    overflow: hidden;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10rem;
 }
 
-table tr th, table tr td {
-    border-right: 0.2rem solid var(--color-text);
-    border-bottom: 0.2rem solid var(--color-text);
+table th {
+    background-color: var(--accent-green-dark);
+    color: var(--heading-light);
+    font-size: 1.5rem;
+}
+
+table td, table th {
+    border: 2px solid var(--text);
     padding: 1rem;
 }
 
-table tr th:first-child,
-table tr td:first-child {
-    border-left: 0.2rem solid var(--color-text);
-}
-
-table tr th {
-    background: linear-gradient(to bottom, var(--color-accent-orange), #ff5d22);
-    font-size: 2rem;
-    border-top: solid 0.2rem var(--color-text);
-    color: white;
-}
-
-/* Rounded corners */
-table tr:first-child th:first-child {
-    border-top-left-radius: 2rem;
-}
-table tr:first-child th:last-child {
-    border-top-right-radius: 2rem;
-}
-table tr:last-child td:first-child {
-    border-bottom-left-radius: 2rem;
-}
-table tr:last-child td:last-child {
-    border-bottom-right-radius: 2rem;
-}
-
-#registernow {
-    text-align: center;
-    background: linear-gradient(to right, #e6f0ff, #f0f5ff);
-
-    padding: 5rem 2rem;
-    border-radius: 3rem;
-}
-
-#registernow a {
-    background: linear-gradient(145deg, var(--color-accent-orange), #ff5d22);
-    /* background: linear-gradient(to bottom, #5e9b57, #70c383); */
-    color: white;
+.registernow {
+    background-color: var(--accent-green-dark);
+    color: var(--text-white);
     text-decoration: none;
     padding: 2rem 3rem;
     border-radius: 2rem;
     font-size: 2rem;
-    font-family: "Rubik", sans-serif;
     font-weight: 800;
     display: inline-block;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
-#registernow a:hover {
-    background: linear-gradient(145deg, #70c383, var(--color-accent-green));
+.registernow:hover {
+    background-color: var(--accent-green);
+    transition: 0.5s ease-in-out;
 }
 
 footer {
-    background: var(--color-accent-orange);
-    border-top-left-radius: 5rem;
-    border-top-right-radius: 5rem;
-    background: linear-gradient(to bottom, var(--color-primary), var(--color-accent));
-    margin: 10rem 2% 0 2%;
+    background-color: #1e2b40;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     padding: 2rem;
+    color: var(--heading-light)
 }
 
 footer > div {
@@ -380,7 +366,7 @@ footer > div {
     row-gap: 2rem !important;
     gap: 5%;
     align-items: center;
-    margin: 4rem var(--margin-header);
+    margin: 4rem var(--margin);
 }
 
 footer > div > div:nth-child(1) {
@@ -389,7 +375,7 @@ footer > div > div:nth-child(1) {
 
 footer h1 {
     font-size: 2.5rem !important;
-    color: var(--color-bg-main) !important;
+    color: var(--heading-light) !important;
     font-weight: 600 !important;
 }
 
@@ -406,6 +392,11 @@ footer a {
     color: var(--color-bg-main)
 }
 
+footer hr {
+    border: 0.25px solid var(--heading-light);
+    margin-bottom: 1rem;
+}
+
 @media screen and (max-width: 1024px) {
     :root {
         --margin: 2%;
@@ -415,7 +406,7 @@ footer a {
         font-size: 2rem;
     }
 
-    div h1:nth-child(1) {
+    .title {
         font-size: 10rem;
     }
 
@@ -457,43 +448,33 @@ footer a {
     }
 
     #about {
-        flex-direction: column;
-        gap: 2rem;
+        text-align: center;
     }
 
     #about h2 {
-        width: 100%;
         text-align: center;
     }
 
-    #about p {
-        width: 100%;
-        text-align: center;
-    }
-
-    #demographic > div,
-    #topics > div {
+    .about {
         flex-direction: column;
         gap: 2rem;
     }
 
-    #theme > div {
-        flex-direction: column;
-        row-gap: 2rem;
+    .about > div {
+        width: 100% !important;
     }
 
-    #theme img, #theme > div > div {
+    .about img {
         width: 100%;
-        text-align: center;
     }
 
-    #topics {
-        background: none;
-        padding: 0;
-        border-radius: 0;
+    .demographic,
+    .topics {
+        flex-direction: column;
+        gap: 2rem;
     }
 
-    #topics > div > div {
+    .topics > div {
         width: 100%;
     }
 
@@ -543,7 +524,7 @@ footer a {
         font-size: 1.5rem;
     }
 
-    div h1:nth-child(1) {
+    .title {
         font-size: 5rem;
     }
 
@@ -567,11 +548,14 @@ footer a {
         width: 100%;
     }
 
-    #registernow a {
+    #awards img {
+        width: 100%;
+    }
+
+    .registernow {
         font-size: 1.4rem;
         padding: 1rem 2rem;
     }
-
 
     table tr th,
     table tr td {
