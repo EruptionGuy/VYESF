@@ -322,7 +322,6 @@ section > div {
 table {
     border-collapse: collapse;
     width: 100%;
-    margin-bottom: 10rem;
 }
 
 table th {
@@ -340,6 +339,7 @@ table td, table th {
     background-color: var(--accent-green-dark);
     color: var(--text-white);
     text-decoration: none;
+    margin-top: 10rem;
     padding: 2rem 3rem;
     border-radius: 2rem;
     font-size: 2rem;
@@ -428,25 +428,6 @@ footer hr {
         flex-wrap: wrap;
     }
 
-    header {
-        height: 55rem;
-    }
-
-    header > div{
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    header > div > div {
-        width: fit-content;
-    }
-
-    header img {
-        width: 60%;
-        margin-top: 2rem;
-    }
-
     #about {
         text-align: center;
     }
@@ -519,12 +500,6 @@ footer hr {
 }
 
 @media screen and (max-width: 600px) {
-    header {
-        height: 45rem;
-    }
-    header img {
-        width: 100%;
-    }
     h1 {
         font-size: 1.5rem;
     }
