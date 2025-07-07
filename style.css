@@ -422,7 +422,7 @@ footer hr {
         font-size: 1.3rem;
     }
 
-    nav {
+    nav > div {
         gap: 5%;
         justify-content: center;
         flex-wrap: wrap;
