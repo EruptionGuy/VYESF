@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
 :root {
     --bg-main: #ffffff;
     --bg-secondary: #f4faef;           /* Soft green-tinted background */
@@ -91,13 +92,17 @@ header > div {
     align-items: center;
     height: 100%;
     text-align: center;
+    background-color: #0000004a;
+    padding: 2rem;
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 5rem;
     font-weight: 800;
     color: var(--heading-light);
     line-height: 1;
+    text-transform: uppercase;
+    font-family: "Crimson Text", serif;
 }
 
 header p {
@@ -195,7 +200,7 @@ section > div {
 }
 
 #theme {
-    background: url(images/the-new-era.jpg), #000000a5;
+    background: url(images/the-new-era.jpg), #000000b7;
     background-size: cover;
     background-blend-mode: darken;
     background-attachment: fixed;
