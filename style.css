@@ -474,6 +474,11 @@ footer hr {
         gap: 2rem;
     }
 
+    .demographic > div {
+        text-align: left;
+        gap: 5%;
+    }
+
     .topics > div {
         width: 100%;
     }
