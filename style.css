@@ -79,7 +79,8 @@ header {
     height: 55rem;
     margin-bottom: 5rem;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    background: url(images/hero-image.jpg), #00000039;
+    /* background: url(images/hero-image.jpg), #00000039; */
+    background: url(images/hero-image.jpg);
     background-size: cover;
     background-blend-mode: darken;
     background-attachment: fixed;
