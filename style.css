@@ -410,16 +410,16 @@ footer hr {
         --margin: 2%;
         --margin-header: 0%;
     }
-    h1 {
+    /* h1 {
         font-size: 3rem;
-    }
+    } */
 
     h2 {
         font-size: 3.2rem;
     }
 
     h3 {
-        font-size: 3rem;
+        font-size: 2.2rem;
     }
 
     body {
@@ -508,16 +508,16 @@ footer hr {
         font-size: 3rem;
     } */
 
-    header {
+    /* header {
         height: 60rem;
-    }
+    } */
 
     h2 {
         font-size: 2.4rem;
     }
 
     h3 {
-        font-size: 2rem;
+        font-size: 1.4rem;
     }
 
     body {
@@ -548,8 +548,8 @@ footer hr {
     }
 }
 
-@media (pointer: coarse) {
+/* @media (pointer: coarse) {
     header, #theme {
         background-attachment: scroll !important;
     }
-}
+} */
