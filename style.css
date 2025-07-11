@@ -548,8 +548,8 @@ footer hr {
     }
 }
 
-/* @media (pointer: coarse) {
-    header, #theme {
+@media (pointer: coarse) {
+    #theme {
         background-attachment: scroll !important;
     }
-} */
+}
