@@ -3,14 +3,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
 :root {
     --bg-main: #ffffff;
-    --bg-secondary: #f4faef;           /* Soft green-tinted background */
+    --bg-secondary: #FFF7F3;           /* Soft green-tinted background */
     --heading-light: #f0f0f0;
     --heading: #2e2e2e;                /* Dark gray for titles */
     --text: #0b1014;                   /* Almost black for body */
     --text-white: #ffffff;
-    --accent-green-dark: #2f663e;      /* For buttons or icons */
-    --accent-green: #538d22;
-    --accent-green-light: #aad576;
+    --accent-warm-dark: #B55C54;     /* Deep rose / brick */
+    --accent-warm: #DB897D;          /* Peachy-pink */
+    --accent-warm-light: #F4CBB2;    /* Light peach / cream */
+    --sunbeam-orange: #F2A65A;       /* Orange sunburst highlight */
     --vn-finance: #8c3413;
     --margin: 7%;
 }
@@ -76,18 +77,18 @@ nav a:hover, footer a:hover {
 
 header {
     padding: 2rem;
-    height: 55rem;
+    height: 30rem;
     margin-bottom: 5rem;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); */
     /* background: url(images/hero-image.jpg), #00000039; */
-    background: url(images/hero-image.jpg);
+    background: url(images/hero-image.png);
     background-size: cover;
-    background-blend-mode: darken;
-    background-attachment: fixed;
+    /* background-blend-mode: darken;
+    background-attachment: fixed; */
     background-position: center;
 }
 
-header > div {
+/* header > div {
     margin: 0 var(--margin);
     display: flex;
     align-items: center;
@@ -96,7 +97,7 @@ header > div {
     background-color: #0000004a;
     padding: 2rem;
     justify-content: center;
-}
+} */
 
 h1 {
     font-size: 5rem;
@@ -108,7 +109,7 @@ h1 {
 }
 
 header p {
-    margin-top: 5rem;
+    margin-top: 0.5rem;
     color: var(--heading-light)
 }
 
@@ -130,9 +131,11 @@ h2 {
 }
 
 h3 {
-    font-size: 4rem;
+    font-size: 3rem;
     color: var(--color-heading);
     margin-bottom: 1rem;
+    margin-top: 5rem;
+    color: var(--heading)
 }
 
 
@@ -171,7 +174,7 @@ section > div {
     width: 60%;
 }
 
-#demographic, #topics {
+#demographic, #registration {
     background-color: var(--bg-secondary);
 }
 
@@ -184,7 +187,7 @@ section > div {
 }
 
 .demographic > div {
-    background-color: var(--accent-green-dark);
+    background-color: var(--accent-warm-dark);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     padding: 2rem;
     display: flex;
@@ -220,7 +223,7 @@ section > div {
     border-radius: 3rem;
 }
 
-#theme h3 {
+.theme h3 {
     font-size: 3rem;
     color: var(--color-subtle-bg);
     font-weight: 600;
@@ -236,13 +239,15 @@ section > div {
     text-align: center;
     justify-content: center;
     gap: 5%;
+    color: var(--text-white);
 }
 
 .topics > div {
     width: 30%;
     padding: 2rem;
-    background-color: var(--accent-green-dark);
+    background-color: var(--accent-warm-dark);
     color: var(--text-white);
+    margin-bottom: 2rem;
 }
 
 #topics i {
@@ -251,7 +256,7 @@ section > div {
 }
 
 #topics p {
-    color: var(--text-white);
+    text-align: center;
 }
 
 #awards {
@@ -268,14 +273,15 @@ section > div {
 }
 
 .awards > div {
-    background-color: var(--accent-green);
+    background-color: var(--sunbeam-orange);
     padding: 2rem;
     width: 20%;
 }
 
-#awards h3 {
+.awards h3 {
     font-size: 4rem;
     color: var(--heading-light);
+    margin-top: 0;
 }
 
 .awards p {
@@ -292,7 +298,7 @@ section > div {
 }
 
 .vnfinance > div {
-    background: var(--accent-green-dark);
+    background: var(--accent-warm-dark);
     padding: 2rem;
     align-items: center;
     width: 42%;
@@ -327,7 +333,7 @@ table {
 }
 
 table th {
-    background-color: var(--accent-green-dark);
+    background-color: var(--accent-warm-dark);
     color: var(--heading-light);
     font-size: 1.5rem;
 }
@@ -338,7 +344,7 @@ table td, table th {
 }
 
 .registernow {
-    background-color: var(--accent-green-dark);
+    background-color: var(--accent-warm-dark);
     color: var(--text-white);
     text-decoration: none;
     margin-top: 10rem;
@@ -350,7 +356,7 @@ table td, table th {
 }
 
 .registernow:hover {
-    background-color: var(--accent-green);
+    background-color: var(--accent-warm);
     transition: 0.5s ease-in-out;
 }
 
