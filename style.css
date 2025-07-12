@@ -391,21 +391,24 @@ footer > div {
 }
 
 footer > div > div:nth-child(1) {
-    width: 35%;
+    width: 40%;
+}
+
+footer > div > div:nth-child(1) > div {
+    display: flex;
+    gap: 8%;
 }
 
 footer > div > div:nth-child(2) {
-    width: 15%;
-}
-
-footer > div > div:nth-child(3) {
-    width: 45%;
+    width: 60%;
 }
 
 footer h1 {
     font-size: 2.5rem !important;
     color: var(--heading-light) !important;
     font-weight: 600 !important;
+    line-height: 1.2;
+    margin-bottom: 2rem;
 }
 
 footer p {
@@ -413,7 +416,7 @@ footer p {
 }
 
 footer i {
-    margin-right: 1rem;
+    margin-right: 0.2rem;
 }
 
 footer a {
@@ -484,7 +487,6 @@ footer hr {
 
     table tr th,
     table tr td {
-        font-size: 1.4rem;
         padding: 0.8rem;
     }
 
@@ -502,11 +504,11 @@ footer hr {
         width: 100%;
     }
 
-    footer > div > div:nth-child(2) {
-        width: 100%;
+    footer > div > div:nth-child(1) > div {
+        flex-direction: column;
     }
 
-    footer > div > div:nth-child(3) {
+    footer > div > div:nth-child(2) {
         width: 100%;
     }
 
