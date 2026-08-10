@@ -113,7 +113,7 @@ nav a:hover, footer a:hover {
 header {
     padding: 2rem;
     height: 40rem;
-    background: url(images/hero-image.png);
+    background: url(images/hero-image.PNG);
     background-size: cover;
     background-position: center;
     display: flex;
