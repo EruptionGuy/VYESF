@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/2025",
+      "destination": "/2025/",
+      "permanent": false
+    }
+  ]
+}
