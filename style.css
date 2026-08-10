@@ -1,0 +1,827 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root {
+    /* Color Palette */
+    --color-deep-navy: #0A1633;
+    --color-tech-blue: #1F478C;
+    --color-electric-cyan: #2ED9FF;
+    --color-ice-white: #FFFFFF;
+    --color-muted-sky: #598ECF;
+  
+    /* Semantic Application */
+    --bg-primary: var(--color-deep-navy);
+    --bg-secondary: var(--color-tech-blue);
+    --accent-color: var(--color-electric-cyan);
+    --text-main: var(--color-ice-white);
+    --text-muted: var(--color-muted-sky);
+
+    /* Navbar Specific Colors */
+    --navbar-bg: rgba(10, 22, 51, 0.85);
+    --navbar-border: rgba(89, 142, 207, 0.2);
+    --navbar-text: #FFFFFF;
+    --navbar-text-hover: #2ED9FF;
+    --navbar-active-bg: #1F478C;
+
+    /* Misc */
+    --margin: 12%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Mulish", sans-serif;
+    line-height: 1.6;
+    box-sizing: border-box;
+}
+
+.reveal{
+    position: relative;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: 2s all ease;
+}
+  
+*.active{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    min-height: 100vh;
+    margin: 0;
+    background-attachment: fixed;
+    font-size: 1.2rem;
+}
+
+nav {
+    background-color: var(--navbar-bg);
+    backdrop-filter: blur(8px);
+    position: sticky;
+    top: 0;
+    padding: 1.2rem 2rem;
+    z-index: 1000;
+    overflow: hidden;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 
+                0 8px 10px -6px rgba(46, 217, 255, 0.15);
+}
+
+.nav-bg-text {
+    position: absolute;
+    top: 50%;
+    left: var(--margin);
+    transform: translateY(-50%);
+    font-size: 3.2rem;
+    font-weight: 900;
+    color: rgba(185, 237, 249, 0.136);
+    letter-spacing: 0.05em;
+    pointer-events: none;
+    z-index: 0;
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+
+nav > .nav-links {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 5%;
+    margin-left: var(--margin);
+    margin-right: var(--margin);
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--navbar-text);
+    font-weight: 700;
+}
+
+nav a:hover, footer a:hover {
+    color: var(--navbar-text-hover);
+    transition: 0.5s ease-in-out;
+}
+
+header {
+    padding: 2rem;
+    height: 40rem;
+    background: url(images/hero-image.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+}
+
+header p {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 0.5rem;
+    color: var(--text-main);
+}
+
+.registernow {
+    background-color: var(--color-tech-blue);
+    color: var(--text-main);
+    text-decoration: none;
+    margin-top: 4rem;
+    padding: 0.5rem 3rem;
+    border-radius: 2rem;
+    font-size: 2rem;
+    font-weight: 800;
+    display: inline-block;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.registernow:hover {
+    background-color: var(--color-muted-sky);
+    transition: 0.5s ease-in-out;
+}
+
+h2 {
+    font-size: 3rem;
+    color: var(--text-main);
+    margin-bottom: 2rem;
+    font-weight: 800;
+}
+
+h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--text-main);
+}
+
+main p {
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+}
+
+main a {
+    color: var(--color-muted-sky);
+    text-decoration: none;
+}
+
+main a:hover {
+    color: var(--color-electric-cyan);
+    transition: 0.5s ease-in-out;
+}
+
+/* Fixed Section & Padding Rules */
+section {
+    padding: 5rem var(--margin);
+}
+
+.about-grid {
+    display: flex;
+    gap: 5%;
+    align-items: center;
+    padding: 3rem 0;
+}
+
+.about-grid:last-child {
+    border-bottom: none;
+}
+
+#about h2 {
+    text-align: left;
+}
+
+.about-media {
+    width: 40%;
+    flex-shrink: 0;
+}
+
+.about-media img {
+    width: 100%;
+    border-radius: 1rem;
+    display: block;
+}
+
+.about-content {
+    width: 60%;
+}
+
+.success-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem 5%;
+    align-items: center;
+    padding: 3rem 0;
+}
+
+/* Forces the heading to span across both columns and center itself */
+.success-grid h2 {
+    grid-column: 1 / -1;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.success-grid .about-content {
+    width: 100%;
+}
+
+.success-grid .about-media {
+    width: 100%;
+}
+
+/* Statistics Section Styling */
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    margin: 2rem 0;
+}
+
+.stat-box {
+    text-align: center;
+    min-width: 140px;
+}
+
+.stat-number {
+    display: block;
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--text-main);
+    line-height: 1.1;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Carousel Container Placeholder Styling */
+.carousel-container {
+    position: relative;
+    background-color: rgba(10, 22, 51, 0.5);
+    border: 2px solid rgba(89, 142, 207, 0.4);
+    border-radius: 1rem;
+    overflow: hidden;
+    height: 450px;
+}
+
+.carousel-track {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    pointer-events: none;
+}
+
+.carousel-slide.current-slide {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(10, 22, 51, 0.7);
+    color: var(--text-main);
+    border: 1px solid rgba(46, 217, 255, 0.3);
+    padding: 0.6rem 0.9rem;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background-color: var(--color-electric-cyan);
+    color: var(--color-deep-navy);
+}
+
+.prev-btn {
+    left: 1rem;
+}
+
+.next-btn {
+    right: 1rem;
+}
+
+#theme {
+    background: url(images/2026-theme.jpg), #0000007f;
+    background-size: cover;
+    background-blend-mode: darken;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.theme-content {
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center;
+}
+
+#theme * {
+    color: var(--text-main);
+    text-align: center;
+}
+
+.theme-content h3 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    margin-top: -2rem;
+}
+
+.theme-content h4 {
+    font-size: 2rem;
+}
+
+#theme p {
+    color: #f0f0f0f3;
+}
+
+.topics {
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+}
+
+.topics > div {
+    width: 50%;
+    background-color: rgba(10, 22, 51, 0.405);
+    backdrop-filter: blur(8px);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.topics i {
+    font-size: 350%;
+    margin-bottom: 1rem;
+}
+
+.ai-gradient-text {
+    background: linear-gradient(
+        270deg, 
+        #4285F4,
+        #9B72CB,
+        #D96570,
+        #4285F4
+    );
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: aiGradientShift 6s ease infinite;
+}
+
+@keyframes aiGradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#registration {
+    background: linear-gradient(180deg, #0A1633 0%, #171026 50%, #0A1633 100%);
+}
+
+.registration-content {
+    text-align: center;
+}
+
+.table-container {
+    overflow-x: auto;
+    margin-top: 3rem;
+    border-radius: 1.2rem;
+    border: 1px solid rgba(89, 142, 207, 0.2);
+    background-color: rgba(10, 22, 51, 0.5);
+    backdrop-filter: blur(12px);
+}
+
+.modern-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    table-layout: fixed;
+}
+
+.modern-table colgroup col:nth-child(1) { width: 18%; }
+.modern-table colgroup col:nth-child(2),
+.modern-table colgroup col:nth-child(3) { width: 41%; }
+
+.modern-table th {
+    background: linear-gradient(180deg, rgba(31, 71, 140, 0.95), rgba(10, 22, 51, 0.95));
+    padding: 1.5rem;
+    font-size: 1.25rem;
+    font-weight: 800;
+    text-align: center;
+    color: var(--text-main);
+    border-bottom: 2px solid rgba(46, 217, 255, 0.3);
+    border-right: 1px solid rgba(89, 142, 207, 0.15); /* Adds a clear vertical border between headers */
+}
+
+.modern-table th:last-child {
+    border-right: none;
+}
+
+.modern-table td {
+    padding: 1.5rem;
+    color: #e2e8f0;
+    border-bottom: 1px solid rgba(89, 142, 207, 0.1);
+    border-right: 1px solid rgba(89, 142, 207, 0.15); /* Vertical divider between columns */
+    vertical-align: middle;
+}
+
+.modern-table td:last-child {
+    border-right: none;
+}
+
+.modern-table .row-header {
+    font-weight: 700;
+    color: var(--color-electric-cyan);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    background: transparent;
+}
+
+.modern-table tbody tr:hover {
+    background-color: rgba(46, 217, 255, 0.03);
+}
+
+.modern-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.price {
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: var(--color-electric-cyan);
+}
+
+#registration .registernow {
+    box-shadow: none;
+    background: linear-gradient(180deg, rgba(31, 71, 140, 0.95), rgba(10, 22, 51, 0.95));
+}
+
+#guidebook {
+    background: linear-gradient(180deg, #0A1633 0%, #171026 50%, #0A1633 100%);
+}
+
+/* Footer Section Styling */
+#footer {
+    padding: 5rem var(--margin) 0 var(--margin);
+    position: relative;
+    overflow: hidden;
+    color: var(--text-main);
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+.footer-brand-info h3 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--color-muted-sky);
+    margin-bottom: 0.5rem;
+}
+
+.footer-brand-info p {
+    color: #94a3b8;
+    font-size: 1rem;
+}
+
+.footer-links-group h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-main);
+    margin-bottom: 1.2rem;
+}
+
+.footer-nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.footer-nav-links li a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: color 0.3s ease;
+}
+
+.footer-nav-links li a:hover {
+    color: var(--color-electric-cyan);
+}
+
+.footer-nav-links li a i {
+    color: var(--color-muted-sky);
+    font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
+}
+
+.giant-footer-text {
+    width: 100%;
+    text-align: center;
+    line-height: 0.85;
+    padding-bottom: 1rem;
+    user-select: none;
+    overflow: hidden;
+}
+
+.giant-footer-text span {
+    /* Uses clamp with a strict vw multiplier calculated specifically to fit 10 characters ("VYESF 2026") on one line */
+    font-size: clamp(3rem, 12.5vw, 15rem);
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    white-space: nowrap;
+    background: linear-gradient(180deg, rgba(226, 232, 240, 0.25) 0%, rgba(46, 217, 255, 0.05) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    width: 100%;
+}
+
+/* =========================================
+   Responsive Media Queries (Readability Optimized)
+   ========================================= */
+
+/* Tablets and Small Laptops (Max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+    :root {
+        --margin: 6%;
+    }
+
+    .nav-bg-text {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2.4rem;
+    }
+
+    .success-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-grid {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .about-media, .about-content {
+        width: 100%;
+    }
+
+    .topics {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .topics > div {
+        width: 100%;
+    }
+}
+
+/* Mobile Devices (Max-width: 768px) */
+@media screen and (max-width: 768px) {
+    :root {
+        --margin: 4%;
+    }
+
+    body {
+        font-size: 1rem;
+    }
+
+    /* Navigation Adjustments */
+    nav {
+        padding: 1rem 0;
+    }
+
+    .nav-bg-text {
+        display: none;
+    }
+
+    nav > .nav-links {
+        display: flex;
+        justify-content: flex-start;
+        gap: 2rem;
+        margin: 0;
+        padding: 0 1rem;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    nav > .nav-links::-webkit-scrollbar {
+        display: none;
+    }
+
+    nav > .nav-links p {
+        flex-shrink: 0;
+        font-size: 0.95rem;
+    }
+
+    /* Header & Hero Section */
+    header {
+        height: 25rem;
+        padding: 1.5rem;
+    }
+
+    .registernow {
+        font-size: 1.5rem;
+        padding: 0.4rem 2rem;
+        margin-top: 2rem;
+    }
+
+    /* Typography & Alignment Strategy */
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 1.2rem;
+        text-align: center !important; /* Center main headers */
+    }
+
+    h3 {
+        font-size: 1.5rem;
+        text-align: center !important;
+    }
+
+    /* Explicitly override desktop rules that forced center-alignment on theme */
+    #theme * {
+        text-align: left;
+    }
+
+    .theme-content h4 {
+        text-align: left;
+    }
+
+    /* Keep body paragraphs and descriptive content left-aligned */
+    main p, 
+    .about-content p, 
+    .theme-content p, 
+    .registration-content p, 
+    .footer-brand-info p,
+    .footer-brand-info h3,
+    .footer-links-group h4 {
+        text-align: left;
+    }
+
+    /* Specific exceptions for elements that should stay centered */
+    .registration-content {
+        text-align: center; /* Ensures content wrapper like the Register Now button stays centered */
+    }
+
+    .theme-content, 
+    .stat-box, 
+    .carousel-container {
+        text-align: left; 
+    }
+
+    .stat-box {
+        text-align: center; /* Stat boxes themselves stay centered internally */
+    }
+
+    /* Sections */
+    section {
+        padding: 3rem var(--margin);
+    }
+
+    /* Statistics Section */
+    .stats-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .stat-box {
+        min-width: 100%;
+    }
+
+    .stat-number {
+        font-size: 2.8rem;
+    }
+
+    /* Carousel */
+    .carousel-container {
+        height: 280px;
+    }
+
+    /* Theme Section */
+    .theme-content h3 {
+        font-size: 2.1rem;
+        margin-top: 0;
+        text-align: left;
+    }
+
+    .topics > div {
+        padding: 1.5rem;
+        text-align: left; /* Keep topic card text left-aligned for easy reading */
+    }
+
+    .topics > div i {
+        display: block;
+        text-align: left; /* Keep topic icons left-aligned */
+    }
+
+    /* Registration Table Layout */
+    .modern-table {
+        text-align: left; /* Keep table content left-aligned */
+    }
+
+    .modern-table th, 
+    .modern-table td {
+        padding: 1rem;
+        font-size: 0.95rem;
+    }
+
+    .modern-table colgroup col:nth-child(1) { width: 25%; }
+    .modern-table colgroup col:nth-child(2),
+    .modern-table colgroup col:nth-child(3) { width: 37.5%; }
+
+    /* Footer */
+    #footer {
+        padding: 3rem var(--margin) 0 var(--margin);
+        text-align: left; /* Ensure footer details remain professional and left-aligned */
+    }
+
+    .footer-top {
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+    .footer-brand-info h3 {
+        font-size: 1.4rem;
+    }
+}
+
+/* Extra Small Mobile Devices (Max-width: 480px) */
+@media screen and (max-width: 480px) {
+    nav > .nav-links {
+        gap: 1rem;
+        font-size: 0.8rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    header {
+        height: 20rem;
+    }
+
+    .registernow {
+        font-size: 1.2rem;
+        padding: 0.4rem 1.5rem;
+    }
+
+    .carousel-container {
+        height: 220px;
+    }
+}
