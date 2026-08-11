@@ -53,7 +53,6 @@ html {
 
 body {
     background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
-    background-color: var(--bg-primary);
     color: var(--text-main);
     min-height: 100vh;
     margin: 0;
@@ -80,7 +79,9 @@ nav {
     transform: translateY(-50%);
     font-size: 3.2rem;
     font-weight: 900;
-    color: rgba(185, 237, 249, 0.136);
+    background: linear-gradient(180deg, rgba(226, 232, 240, 0.25) 0%, rgba(46, 217, 255, 0.05) 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     letter-spacing: 0.05em;
     pointer-events: none;
     z-index: 0;
@@ -139,6 +140,7 @@ header p {
     font-weight: 800;
     display: inline-block;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    animation: pulseGlow 2.5s infinite;
 }
 
 .registernow:hover {
@@ -146,11 +148,24 @@ header p {
     transition: 0.5s ease-in-out;
 }
 
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(46, 217, 255, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(46, 217, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(46, 217, 255, 0);
+    }
+}
+
 h2 {
     font-size: 3rem;
     color: var(--text-main);
     margin-bottom: 2rem;
     font-weight: 800;
+    text-align: center;
 }
 
 h3 {
@@ -160,7 +175,7 @@ h3 {
 }
 
 main p {
-    color: var(--color-text);
+    color: var(--color-ice-white);
     margin-bottom: 0.5rem;
 }
 
@@ -174,7 +189,6 @@ main a:hover {
     transition: 0.5s ease-in-out;
 }
 
-/* Fixed Section & Padding Rules */
 section {
     padding: 5rem var(--margin);
 }
@@ -188,10 +202,6 @@ section {
 
 .about-grid:last-child {
     border-bottom: none;
-}
-
-#about h2 {
-    text-align: left;
 }
 
 .about-media {
@@ -217,12 +227,17 @@ section {
     padding: 3rem 0;
 }
 
-/* Forces the heading to span across both columns and center itself */
 .success-grid h2 {
     grid-column: 1 / -1;
     text-align: center;
     width: 100%;
     margin-bottom: 0;
+}
+
+.success-grid h2 span {
+    background: linear-gradient(135deg, #FF3366 0%, #FF9933 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .success-grid .about-content {
@@ -233,7 +248,6 @@ section {
     width: 100%;
 }
 
-/* Statistics Section Styling */
 .stats-container {
     display: flex;
     justify-content: center;
@@ -262,11 +276,9 @@ section {
     letter-spacing: 0.05em;
 }
 
-/* Carousel Container Placeholder Styling */
 .carousel-container {
     position: relative;
     background-color: rgba(10, 22, 51, 0.5);
-    border: 2px solid rgba(89, 142, 207, 0.4);
     border-radius: 1rem;
     overflow: hidden;
     height: 450px;
@@ -389,7 +401,7 @@ section {
         #4285F4
     );
     background-size: 300% 300%;
-    -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: aiGradientShift 6s ease infinite;
 }
@@ -573,7 +585,6 @@ section {
     width: 100%;
     text-align: center;
     line-height: 0.85;
-    padding-bottom: 1rem;
     user-select: none;
     overflow: hidden;
 }
@@ -585,15 +596,11 @@ section {
     letter-spacing: -0.04em;
     white-space: nowrap;
     background: linear-gradient(180deg, rgba(226, 232, 240, 0.25) 0%, rgba(46, 217, 255, 0.05) 100%);
-    -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
     width: 100%;
 }
-
-/* =========================================
-   Responsive Media Queries (Readability Optimized)
-   ========================================= */
 
 /* Tablets and Small Laptops (Max-width: 1024px) */
 @media screen and (max-width: 1024px) {
@@ -636,6 +643,10 @@ section {
 @media screen and (max-width: 768px) {
     :root {
         --margin: 4%;
+    }
+
+    * {
+        text-align: left !important;
     }
 
     body {
@@ -688,12 +699,11 @@ section {
     h2 {
         font-size: 2rem;
         margin-bottom: 1.2rem;
-        text-align: center !important; /* Center main headers */
+        text-align: left;
     }
 
     h3 {
         font-size: 1.5rem;
-        text-align: center !important;
     }
 
     /* Explicitly override desktop rules that forced center-alignment on theme */
@@ -703,32 +713,6 @@ section {
 
     .theme-content h4 {
         text-align: left;
-    }
-
-    /* Keep body paragraphs and descriptive content left-aligned */
-    main p, 
-    .about-content p, 
-    .theme-content p, 
-    .registration-content p, 
-    .footer-brand-info p,
-    .footer-brand-info h3,
-    .footer-links-group h4 {
-        text-align: left;
-    }
-
-    /* Specific exceptions for elements that should stay centered */
-    .registration-content {
-        text-align: center; /* Ensures content wrapper like the Register Now button stays centered */
-    }
-
-    .theme-content, 
-    .stat-box, 
-    .carousel-container {
-        text-align: left; 
-    }
-
-    .stat-box {
-        text-align: center; /* Stat boxes themselves stay centered internally */
     }
 
     /* Sections */
@@ -764,17 +748,17 @@ section {
 
     .topics > div {
         padding: 1.5rem;
-        text-align: left; /* Keep topic card text left-aligned for easy reading */
+        text-align: left;
     }
 
     .topics > div i {
         display: block;
-        text-align: left; /* Keep topic icons left-aligned */
+        text-align: left;
     }
 
     /* Registration Table Layout */
     .modern-table {
-        text-align: left; /* Keep table content left-aligned */
+        text-align: left;
     }
 
     .modern-table th, 
@@ -790,7 +774,7 @@ section {
     /* Footer */
     #footer {
         padding: 3rem var(--margin) 0 var(--margin);
-        text-align: left; /* Ensure footer details remain professional and left-aligned */
+        text-align: left;
     }
 
     .footer-top {
