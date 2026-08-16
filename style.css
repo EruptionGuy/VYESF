@@ -605,6 +605,10 @@ section {
 
 /* Tablets and Small Laptops (Max-width: 1024px) */
 @media screen and (max-width: 1024px) {
+    * {
+        text-align: left !important;
+    }
+
     :root {
         --margin: 6%;
     }
@@ -646,10 +650,6 @@ section {
         --margin: 4%;
     }
 
-    * {
-        text-align: left !important;
-    }
-
     body {
         font-size: 1rem;
     }
@@ -688,32 +688,13 @@ section {
     header {
         height: 25rem;
         padding: 1.5rem;
+        background-position: 65% center;
     }
 
     .registernow {
         font-size: 1.5rem;
         padding: 0.4rem 2rem;
         margin-top: 2rem;
-    }
-
-    /* Typography & Alignment Strategy */
-    h2 {
-        font-size: 2rem;
-        margin-bottom: 1.2rem;
-        text-align: left;
-    }
-
-    h3 {
-        font-size: 1.5rem;
-    }
-
-    /* Explicitly override desktop rules that forced center-alignment on theme */
-    #theme * {
-        text-align: left;
-    }
-
-    .theme-content h4 {
-        text-align: left;
     }
 
     /* Sections */
@@ -744,24 +725,17 @@ section {
     .theme-content h3 {
         font-size: 2.1rem;
         margin-top: 0;
-        text-align: left;
     }
 
     .topics > div {
         padding: 1.5rem;
-        text-align: left;
     }
 
     .topics > div i {
         display: block;
-        text-align: left;
     }
 
     /* Registration Table Layout */
-    .modern-table {
-        text-align: left;
-    }
-
     .modern-table th, 
     .modern-table td {
         padding: 1rem;
