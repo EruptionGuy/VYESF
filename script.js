@@ -1,82 +1,80 @@
- // Carousel
- const track = document.querySelector('.carousel-track');
- const slides = Array.from(track.children);
- const nextButton = document.querySelector('.next-btn');
- const prevButton = document.querySelector('.prev-btn');
+// --- CAROUSEL ---
+const track = document.querySelector('.carousel-track');
+const slides = Array.from(track.children);
+const nextButton = document.querySelector('.next-btn');
+const prevButton = document.querySelector('.prev-btn');
+const carouselContainer = document.querySelector('.carousel-container');
 
- const updateSlide = (currentSlide, targetSlide) => {
-     currentSlide.classList.remove('current-slide');
-     targetSlide.classList.add('current-slide');
- };
+const INTERVAL_TIME = 4000;
+let slideInterval;
 
- const moveToNextSlide = () => {
-     const currentSlide = track.querySelector('.current-slide');
-     let nextSlide = currentSlide.nextElementSibling;
-     
-     if (!nextSlide) {
-         nextSlide = slides[0]; // Loop back to the first slide
-     }
-     updateSlide(currentSlide, nextSlide);
- };
+const updateSlide = (targetSlide) => {
+    const currentSlide = track.querySelector('.current-slide') || slides[0];
+    currentSlide.classList.remove('current-slide');
+    targetSlide.classList.add('current-slide');
+};
 
- const moveToPrevSlide = () => {
-     const currentSlide = track.querySelector('.current-slide');
-     let prevSlide = currentSlide.previousElementSibling;
-     
-     if (!prevSlide) {
-         prevSlide = slides[slides.length - 1]; // Loop back to the last slide
-     }
-     updateSlide(currentSlide, prevSlide);
- };
+const moveToNextSlide = () => {
+    const currentSlide = track.querySelector('.current-slide') || slides[0];
+    const nextSlide = currentSlide.nextElementSibling || slides[0]; 
+    updateSlide(nextSlide);
+};
 
- // When clicked left/prev button
- prevButton.addEventListener('click', () => {
-     moveToPrevSlide();
-     resetTimer(); // Reset the auto-scroll timer on user interaction
- });
+const moveToPrevSlide = () => {
+    const currentSlide = track.querySelector('.current-slide') || slides[0];
+    const prevSlide = currentSlide.previousElementSibling || slides[slides.length - 1]; 
+    updateSlide(prevSlide);
+};
 
- // When clicked right/next button
- nextButton.addEventListener('click', () => {
-     moveToNextSlide();
-     resetTimer(); // Reset the auto-scroll timer on user interaction
- });
+const startTimer = () => {
+    slideInterval = setInterval(moveToNextSlide, INTERVAL_TIME);
+};
 
- // Set up automatic sliding interval (e.g., every 4000ms = 4 seconds)
- let slideInterval = setInterval(moveToNextSlide, 4000);
+const resetTimer = () => {
+    clearInterval(slideInterval);
+    startTimer();
+};
 
- const resetTimer = () => {
-     clearInterval(slideInterval);
-     slideInterval = setInterval(moveToNextSlide, 4000);
- };
+// Event Listeners for Buttons
+nextButton.addEventListener('click', () => {
+    moveToNextSlide();
+    resetTimer();
+});
 
- // Optional: Pause auto-scrolling when the user hovers over the carousel container
- const carouselContainer = document.querySelector('.carousel-container');
- carouselContainer.addEventListener('mouseenter', () => {
-     clearInterval(slideInterval);
- });
+prevButton.addEventListener('click', () => {
+    moveToPrevSlide();
+    resetTimer();
+});
 
- carouselContainer.addEventListener('mouseleave', () => {
-     slideInterval = setInterval(moveToNextSlide, 4000);
- });
+// Pause/Resume on Hover
+carouselContainer.addEventListener('mouseenter', () => clearInterval(slideInterval));
+carouselContainer.addEventListener('mouseleave', startTimer);
+
+// Initialize Auto-Scroll
+startTimer();
 
 
- 
- // Reveal
- function reveal() {
-    var reveals = document.querySelectorAll(".reveal");
-    for (var i = 0; i < reveals.length; i++) {
-      var windowHeight = window.innerHeight;
-      var elementTop = reveals[i].getBoundingClientRect().top;
-      var elementVisible = 150;
-      if (elementTop < windowHeight - elementVisible) {
-        reveals[i].classList.add("active");
-      } else {
-        reveals[i].classList.remove("active");
-      }
-    }
-  }
-  
-  window.addEventListener("scroll", reveal);
-  
-  // To check the scroll position on page load
-  reveal();
+// --- SCROLL REVEAL ---
+const revealCallback = (entries, observer) => {
+    entries.forEach(entry => {
+        // Toggle 'active' based on whether the element is in the viewport
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+        } else {
+            entry.target.classList.remove('active');
+        }
+    });
+};
+
+// Observer options: triggers when the element enters the viewport
+const revealOptions = {
+    root: null, // uses the browser viewport
+    threshold: 0.15 // triggers when ~15% of the element is visible
+};
+
+const revealObserver = new IntersectionObserver(revealCallback, revealOptions);
+
+// Target all .reveal elements and start observing them
+document.querySelectorAll('.reveal').forEach(element => {
+    revealObserver.observe(element);
+});
